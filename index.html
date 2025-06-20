@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>જય ભૂપેન્દ્રકુમાર ભટ્ટ - બાયોડેટા</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans Gujarati', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .biodata-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        
+        .header h1 {
+            color: #2d3748;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            color: #4a5568;
+            font-size: 1.2rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .photo-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .photo-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .photo-placeholder {
+            width: 200px;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .section {
+            margin-bottom: 35px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section-title {
+            color: #2d3748;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 3px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .info-item {
+            display: flex;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #4a5568;
+            min-width: 150px;
+            flex-shrink: 0;
+        }
+        
+        .info-value {
+            color: #2d3748;
+            font-weight: 400;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item strong {
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .clickable {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .clickable:hover {
+            transform: scale(1.05);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .phone-link {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .phone-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .email-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .email-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .biodata-container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="biodata-container">
+        <div class="header">
+            <h1>🙏 સમસ્ત બ્રહ્મસમાજ - ગુજરાત 🙏</h1>
+            <div class="subtitle">યુવક બાયોડેટા</div>
+        </div>
+        
+        <div class="content">
+            <div class="photo-section">
+                <div class="photo-grid">
+                    <div class="photo-placeholder">
+                        📷 ફોટો - 1<br>
+                        (કેઝ્યુઅલ વેર)
+                    </div>
+                    <div class="photo-placeholder">
+                        📷 ફોટો - 2<br>
+                        (ફોર્મલ વેર)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🧑 વ્યક્તિગત વિગતો</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">નામ:</div>
+                        <div class="info-value"><span class="highlight">જય ભૂપેન્દ્રકુમાર ભટ્ટ</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">જન્મ તારીખ:</div>
+                        <div class="info-value">08/04/1991</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">જન્મસ્થળ:</div>
+                        <div class="info-value">હિંમતનગર</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">જન્મ સમય:</div>
+                        <div class="info-value">સવારે 10:30 વાગ્યે</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">શિક્ષણ:</div>
+                        <div class="info-value">ITI (આઈ.ટી.આઈ)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">ચશ્મા:</div>
+                        <div class="info-value">ના</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">મંગળ/શનિ દોષ:</div>
+                        <div class="info-value">હા</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">વૈવાહિક સ્થિતિ:</div>
+                        <div class="info-value"><span class="highlight">અપરણિત</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">👪 કુટુંબની વિગતો</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">પિતાનું નામ:</div>
+                        <div class="info-value">શ્રી ભૂપેન્દ્રકુમાર રસિકલાલ ભટ્ટ</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">પિતાનો વ્યવસાય:</div>
+                        <div class="info-value">સરકારી શિક્ષક</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">માતાનું નામ:</div>
+                        <div class="info-value">શ્રીમતી પ્રજ્ઞાબેન ભૂપેન્દ્રકુમાર ભટ્ટ</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">માતાનો વ્યવસાય:</div>
+                        <div class="info-value">ગૃહિણી</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">ભાઈ/બહેનો:</div>
+                        <div class="info-value">3 બહેનો (બધી પરિણીત)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">મોસાળ:</div>
+                        <div class="info-value">શ્રી રોહિતભાઈ ભીખાભાઈ ભટ્ટ</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🧬 જાતિ અને શારીરિક વિગતો</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">ગૌત્ર:</div>
+                        <div class="info-value">પરાશર</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">પેટા જ્ઞાતિ:</div>
+                        <div class="info-value">ભટ્ટ મેવાડા</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">ઉંચાઈ:</div>
+                        <div class="info-value">5 ફૂટ 5 ઇંચ</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">વજન:</div>
+                        <div class="info-value">60 કિગ્રા</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">બ્લડ ગ્રુપ:</div>
+                        <div class="info-value">ઉપલબ્ધ નથી</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">નાડી:</div>
+                        <div class="info-value">ઉપલબ્ધ નથી</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">💼 વ્યવસાય અને આવક</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">હાલનો વ્યવસાય:</div>
+                        <div class="info-value">ITI સંબંધિત ક્ષેત્રમાં નોકરી</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">માસિક આવક:</div>
+                        <div class="info-value"><span class="highlight">₹20,000/-</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🏠 સરનામું</div>
+                <div class="info-item">
+                    <div class="info-value" style="font-size: 1.1rem; text-align: center; width: 100%;">
+                        M-8, નીલદીપ ફ્લેટ, વિશ્રામ નગર સામે,<br>
+                        ગુરુકુલ રોડ, અમદાવાદ.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <div class="contact-title">📞 સંપર્ક માટે</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>📱 મોબાઈલ:</strong>
+                    <a href="tel:+919408573101" class="phone-link clickable">94085 73101</a>
+                    <a href="tel:+919687514441" class="phone-link clickable">96875 14441</a>
+                </div>
+                <div class="contact-item">
+                    <strong>📧 ઈમેઈલ:</strong>
+                    <a href="mailto:advocatesurat@gmail.com" class="email-link clickable">advocatesurat@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
